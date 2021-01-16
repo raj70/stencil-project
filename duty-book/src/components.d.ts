@@ -10,15 +10,14 @@ export namespace Components {
         "color": string;
         "name": string;
     }
-    interface AppFirstcomponent {
-        "name": string;
-    }
     interface AppHome {
     }
     interface AppProfile {
         "name": string;
     }
     interface AppRoot {
+    }
+    interface AppRoute {
     }
 }
 declare global {
@@ -27,12 +26,6 @@ declare global {
     var HTMLAppCalendarElement: {
         prototype: HTMLAppCalendarElement;
         new (): HTMLAppCalendarElement;
-    };
-    interface HTMLAppFirstcomponentElement extends Components.AppFirstcomponent, HTMLStencilElement {
-    }
-    var HTMLAppFirstcomponentElement: {
-        prototype: HTMLAppFirstcomponentElement;
-        new (): HTMLAppFirstcomponentElement;
     };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
@@ -52,20 +45,23 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLAppRouteElement extends Components.AppRoute, HTMLStencilElement {
+    }
+    var HTMLAppRouteElement: {
+        prototype: HTMLAppRouteElement;
+        new (): HTMLAppRouteElement;
+    };
     interface HTMLElementTagNameMap {
         "app-calendar": HTMLAppCalendarElement;
-        "app-firstcomponent": HTMLAppFirstcomponentElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "app-route": HTMLAppRouteElement;
     }
 }
 declare namespace LocalJSX {
     interface AppCalendar {
         "color"?: string;
-        "name"?: string;
-    }
-    interface AppFirstcomponent {
         "name"?: string;
     }
     interface AppHome {
@@ -75,12 +71,14 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface AppRoute {
+    }
     interface IntrinsicElements {
         "app-calendar": AppCalendar;
-        "app-firstcomponent": AppFirstcomponent;
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "app-route": AppRoute;
     }
 }
 export { LocalJSX as JSX };
@@ -88,10 +86,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-calendar": LocalJSX.AppCalendar & JSXBase.HTMLAttributes<HTMLAppCalendarElement>;
-            "app-firstcomponent": LocalJSX.AppFirstcomponent & JSXBase.HTMLAttributes<HTMLAppFirstcomponentElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "app-route": LocalJSX.AppRoute & JSXBase.HTMLAttributes<HTMLAppRouteElement>;
         }
     }
 }

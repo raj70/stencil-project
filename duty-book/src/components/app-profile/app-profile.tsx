@@ -20,10 +20,17 @@ export class AppProfile {
     return [
       <ion-header>
         <ion-toolbar color="primary">
+          
           <ion-buttons slot="start">
             <ion-back-button defaultHref="/" />
           </ion-buttons>
           <ion-title>Profile: {this.name}</ion-title>
+
+           {/*  this button is need show the burger button; auto hide*/}
+           <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+
         </ion-toolbar>
       </ion-header>,
 
