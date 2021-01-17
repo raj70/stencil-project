@@ -29,18 +29,10 @@ export class AppRoot {
                     <ion-icon slot="start" name="storefront"></ion-icon>
                     <ion-label>Home</ion-label>
                   </ion-item>
-                  <ion-item href="/profile">
+                  <ion-item href="/calendar">
                     <ion-icon slot="start" name="calendar"></ion-icon>
-                    <ion-label>Calendar - Month</ion-label>
-                  </ion-item>
-                  <ion-item >
-                    <ion-icon slot="start" name="calendar"></ion-icon>
-                    <ion-label>Calendar - Week</ion-label>
-                  </ion-item>
-                  <ion-item >
-                    <ion-icon slot="start" name="calendar"></ion-icon>
-                    <ion-label>Calendar - Day</ion-label>
-                  </ion-item>
+                    <ion-label>Calendar</ion-label>
+                  </ion-item>                 
                 </ion-menu-toggle>               
               </ion-list>             
             </ion-content>

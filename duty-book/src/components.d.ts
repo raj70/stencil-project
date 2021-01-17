@@ -7,10 +7,14 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppCalendar {
-        "color": string;
-        "name": string;
+    }
+    interface AppDay {
+        "date": Date;
     }
     interface AppHome {
+    }
+    interface AppMonth {
+        "date": Date;
     }
     interface AppProfile {
         "name": string;
@@ -18,6 +22,9 @@ export namespace Components {
     interface AppRoot {
     }
     interface AppRoute {
+    }
+    interface AppWeek {
+        "date": Date;
     }
 }
 declare global {
@@ -27,11 +34,23 @@ declare global {
         prototype: HTMLAppCalendarElement;
         new (): HTMLAppCalendarElement;
     };
+    interface HTMLAppDayElement extends Components.AppDay, HTMLStencilElement {
+    }
+    var HTMLAppDayElement: {
+        prototype: HTMLAppDayElement;
+        new (): HTMLAppDayElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
+    };
+    interface HTMLAppMonthElement extends Components.AppMonth, HTMLStencilElement {
+    }
+    var HTMLAppMonthElement: {
+        prototype: HTMLAppMonthElement;
+        new (): HTMLAppMonthElement;
     };
     interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
     }
@@ -51,20 +70,33 @@ declare global {
         prototype: HTMLAppRouteElement;
         new (): HTMLAppRouteElement;
     };
+    interface HTMLAppWeekElement extends Components.AppWeek, HTMLStencilElement {
+    }
+    var HTMLAppWeekElement: {
+        prototype: HTMLAppWeekElement;
+        new (): HTMLAppWeekElement;
+    };
     interface HTMLElementTagNameMap {
         "app-calendar": HTMLAppCalendarElement;
+        "app-day": HTMLAppDayElement;
         "app-home": HTMLAppHomeElement;
+        "app-month": HTMLAppMonthElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "app-route": HTMLAppRouteElement;
+        "app-week": HTMLAppWeekElement;
     }
 }
 declare namespace LocalJSX {
     interface AppCalendar {
-        "color"?: string;
-        "name"?: string;
+    }
+    interface AppDay {
+        "date"?: Date;
     }
     interface AppHome {
+    }
+    interface AppMonth {
+        "date"?: Date;
     }
     interface AppProfile {
         "name"?: string;
@@ -73,12 +105,18 @@ declare namespace LocalJSX {
     }
     interface AppRoute {
     }
+    interface AppWeek {
+        "date"?: Date;
+    }
     interface IntrinsicElements {
         "app-calendar": AppCalendar;
+        "app-day": AppDay;
         "app-home": AppHome;
+        "app-month": AppMonth;
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "app-route": AppRoute;
+        "app-week": AppWeek;
     }
 }
 export { LocalJSX as JSX };
@@ -86,10 +124,13 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-calendar": LocalJSX.AppCalendar & JSXBase.HTMLAttributes<HTMLAppCalendarElement>;
+            "app-day": LocalJSX.AppDay & JSXBase.HTMLAttributes<HTMLAppDayElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
+            "app-month": LocalJSX.AppMonth & JSXBase.HTMLAttributes<HTMLAppMonthElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "app-route": LocalJSX.AppRoute & JSXBase.HTMLAttributes<HTMLAppRouteElement>;
+            "app-week": LocalJSX.AppWeek & JSXBase.HTMLAttributes<HTMLAppWeekElement>;
         }
     }
 }

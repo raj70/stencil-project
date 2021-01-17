@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-route',
@@ -12,6 +12,7 @@ export class AppRoute {
         <ion-router useHash={false}>          
           <ion-route url="/" component="app-home" />
           <ion-route url="/profile" component="app-profile" />
+          <ion-route url="/calendar" component="app-calendar" />
         </ion-router>
     ];
   }
